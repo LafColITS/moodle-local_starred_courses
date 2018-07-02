@@ -106,7 +106,9 @@ function course_is_starred($userid, $courseid) {
  * @return bool Whether or not the course was successfully starred
  */
 function star_course($userid, $courseid) {
-    if ($starred = get_starred_course_ids($userid)) {
+    $context = \context_course::instance($courseid);
+    $hascap = has_capability('local/starred_courses:canstar', $context);
+    if ($starred = get_starred_course_ids($userid) && $hascap) {
         if (! in_array($courseid, $starred)) {
             $starred[] = $courseid;
             $starred = implode(',', array_filter($starred));
@@ -123,7 +125,9 @@ function star_course($userid, $courseid) {
  * @return bool Whether or not the course was successfully unstarred
  */
 function unstar_course($userid, $courseid) {
-    if ($starred = get_starred_course_ids($userid)) {
+    $context = \context_course::instance($courseid);
+    $hascap = has_capability('local/starred_courses:canstar', $context);
+    if ($starred = get_starred_course_ids($userid) && $hascap) {
         if (($key = array_search($courseid, $starred)) !== false) {
             unset($starred[$key]);
             $starred = implode(',', array_filter($starred));
