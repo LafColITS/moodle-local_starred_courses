@@ -34,7 +34,7 @@ function local_starred_courses_extend_navigation($navigation) {
     global $COURSE, $USER, $CFG, $PAGE;
 
     // Check that we're supposed to be displaying the link.
-    if (!$CFG->local_starred_courses_display_toggle) {
+    if (property_exists($CFG, 'local_starred_courses_display_toggle') && !$CFG->local_starred_courses_display_toggle) {
         return;
     }
 
