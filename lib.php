@@ -107,8 +107,8 @@ function course_is_starred($userid, $courseid) {
  */
 function star_course($userid, $courseid) {
     $context = \context_course::instance($courseid);
-    $hascap = has_capability('local/starred_courses:canstar', $context);
-    if ($starred = get_starred_course_ids($userid) && $hascap) {
+    require_capability('local/starred_courses:canstar', $context);
+    if ($starred = get_starred_course_ids($userid)) {
         if (! in_array($courseid, $starred)) {
             $starred[] = $courseid;
             $starred = implode(',', array_filter($starred));
@@ -126,8 +126,8 @@ function star_course($userid, $courseid) {
  */
 function unstar_course($userid, $courseid) {
     $context = \context_course::instance($courseid);
-    $hascap = has_capability('local/starred_courses:canstar', $context);
-    if ($starred = get_starred_course_ids($userid) && $hascap) {
+    require_capability('local/starred_courses:canstar', $context);
+    if ($starred = get_starred_course_ids($userid)) {
         if (($key = array_search($courseid, $starred)) !== false) {
             unset($starred[$key]);
             $starred = implode(',', array_filter($starred));

@@ -133,6 +133,9 @@ define(['jquery', 'core/ajax', 'core/str'], function($, ajax, mstr) {
                                 SC.setCourseState(r);
                                 SC.ajaxActive = false;
                             },
+                            fail: function() {
+                                SC.ajaxActive = false;
+                            }
                         }]);
                         e.stopPropagation();
                     }
