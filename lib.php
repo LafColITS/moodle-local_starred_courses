@@ -108,7 +108,8 @@ function course_is_starred($userid, $courseid) {
 function star_course($userid, $courseid) {
     $context = \context_course::instance($courseid);
     require_capability('local/starred_courses:canstar', $context);
-    if ($starred = get_starred_course_ids($userid)) {
+    $starred = get_starred_course_ids($userid);
+    if (is_array($starred)) {
         if (! in_array($courseid, $starred)) {
             $starred[] = $courseid;
             $starred = implode(',', array_filter($starred));
@@ -127,7 +128,8 @@ function star_course($userid, $courseid) {
 function unstar_course($userid, $courseid) {
     $context = \context_course::instance($courseid);
     require_capability('local/starred_courses:canstar', $context);
-    if ($starred = get_starred_course_ids($userid)) {
+    $starred = get_starred_course_ids($userid);
+    if (is_array($starred)) {
         if (($key = array_search($courseid, $starred)) !== false) {
             unset($starred[$key]);
             $starred = implode(',', array_filter($starred));
@@ -144,7 +146,9 @@ function unstar_course($userid, $courseid) {
  */
 function get_starred_course_ids($userid) {
     $starred = get_user_preferences(STARRED_COURSES_USER_PREFERENCE_NAME, false, $userid);
-    if ($starred = explode(',', $starred)) {
+    if (empty($starred)) {
+        return array();
+    } else if ($starred = explode(',', $starred)) {
         return $starred;
     }
     return false;
@@ -158,13 +162,16 @@ function get_starred_course_ids($userid) {
 function get_starred_courses($userid) {
     global $DB;
 
+    $starred_ids = get_starred_course_ids($userid);
     $starred_courses = array();
-    if ($starred_ids = get_starred_course_ids($userid)) {
+    if ($starred_ids) {
         foreach ($starred_ids as $courseid) {
             $course = $DB->get_record('course', array('id' => $courseid));
             $starred_courses[] = $course;
         }
         return $starred_courses;
+    } else if (is_array($starred_ids)) {
+        return array();
     }
     return false;
 }
