@@ -27,6 +27,19 @@ define(['jquery', 'core/ajax', 'core/str'], function($, ajax, mstr) {
             SC.str = {};
 
             /**
+             * Set element class to reflect current course state
+             * @param {bool} starred Display as starred or unstarred?
+             */
+            SC.setClass = function(starred) {
+                $(SC.starlink).removeClass('course-starred course-unstarred');
+                if (starred) {
+                    $(SC.starlink).addClass('course-starred');
+                } else {
+                    $(SC.starlink).addClass('course-unstarred');
+                }
+            };
+
+            /**
              * Make icon display as starred or unstarred.
              * @param {bool} starred Display as starred or unstarred?
              */
@@ -98,6 +111,7 @@ define(['jquery', 'core/ajax', 'core/str'], function($, ajax, mstr) {
              */
             SC.setCourseState = function(starred) {
                 SC.courseState = starred;
+                SC.setClass(starred);
                 SC.iconToBase();
                 SC.textToBase();
             };
@@ -109,8 +123,10 @@ define(['jquery', 'core/ajax', 'core/str'], function($, ajax, mstr) {
                 // Set up some variables.
                 SC.starlink = $("a[data-key='starlink']");
                 SC.currentCourseID = $('body').attr('class').match(/(^|\s)course-(\d+)($|\s)/)[2];
-                SC.courseState = SC.getCourseState();
                 SC.ajaxActive = false; // Checking this will prevent state flickering.
+
+                // Set initial course state based on state from backend.
+                SC.setCourseState(SC.getCourseState());
 
                 // Event listeners.
                 $("a[data-key='starlink']").on({
