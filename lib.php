@@ -162,15 +162,15 @@ function get_starred_course_ids($userid) {
 function get_starred_courses($userid) {
     global $DB;
 
-    $starred_ids = get_starred_course_ids($userid);
-    $starred_courses = array();
-    if ($starred_ids) {
-        foreach ($starred_ids as $courseid) {
+    $starids = get_starred_course_ids($userid);
+    $starcourses = array();
+    if ($starids) {
+        foreach ($starids as $courseid) {
             $course = $DB->get_record('course', array('id' => $courseid));
-            $starred_courses[] = $course;
+            $starcourses[] = $course;
         }
-        return $starred_courses;
-    } else if (is_array($starred_ids)) {
+        return $starcourses;
+    } else if (is_array($starids)) {
         return array();
     }
     return false;
