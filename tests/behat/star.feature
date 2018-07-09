@@ -1,5 +1,5 @@
 @local @local_starred_courses
-Feature:
+Feature: User can star and unstar courses
 
   @javascript
   Scenario: Starring and unstarring courses
