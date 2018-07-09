@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 $functions = array(
     'local_starred_courses_toggle_starred' => array(
         'classname' => 'local_starred_courses_external',
