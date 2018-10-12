@@ -1,12 +1,6 @@
-# README for Starred Courses Plugin
+# Starred Courses Plugin
 developed by Andy Zito at Lafayette College
-version: 0.1 2018-07-02
-
-## Installation:
-
-Unzip files into your Moodle blocks directory. This will create a folder called starred_courses.
-
-Go to the admin Notifications page to complete installation.
+version: 1.0.0 2018-10-12 for Moodle master
 
 ## Use:
 

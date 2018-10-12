@@ -98,7 +98,7 @@ define(['jquery', 'core/ajax', 'core/str'], function($, ajax, mstr) {
                 if (name[2] === 'star' && linktext === SC.str.starred) {
                     // Course is starred.
                     return true;
-                } else if (name[2] === 'star-o'  && linktext === SC.str.unstarred) {
+                } else if (name[2] === 'star-o' && linktext === SC.str.unstarred) {
                     // Course is starred.
                     return false;
                 }

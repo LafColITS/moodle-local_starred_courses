@@ -34,7 +34,7 @@ class local_starred_courses_external extends external_api {
      * @return external_function_parameters
      */
     public static function toggle_starred_parameters() {
-        global $COURSE, $USER;
+        global $USER;
 
         return new external_function_parameters(
             array(

@@ -23,8 +23,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2018070200;
-$plugin->requires = 2018051700;
+$plugin->version = 2018101200;
+$plugin->requires = 2018101100;
 $plugin->component = 'local_starred_courses';
 $plugin->maturity = MATURITY_ALPHA;
-$plugin->release = '0.1.0';
+$plugin->release = '1.0.0'; // [major].[minor].[patch]-[Moodle Version].[Moodle version specific patch].

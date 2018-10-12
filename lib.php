@@ -70,7 +70,7 @@ function local_starred_courses_extend_navigation($navigation) {
             'starlink', // Key.
             new pix_icon($icon, '', 'local_starred_courses') // Icon.
         );
-        $add = $coursenode->add_node($node, 'participants');
+        $coursenode->add_node($node, 'participants');
     }
 }
 
