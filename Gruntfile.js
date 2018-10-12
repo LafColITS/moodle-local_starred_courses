@@ -31,6 +31,6 @@ module.exports = function (grunt) {
         }
     });
     // The default task (running "grunt" in console).
-    grunt.registerTask("default", ["fixindent", "eslint", "uglify"]);
+    grunt.registerTask("default", ["eslint", "uglify"]);
     grunt.registerTask("dev", ["uglify"]);
 };
