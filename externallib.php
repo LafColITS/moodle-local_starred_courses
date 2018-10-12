@@ -27,6 +27,9 @@ defined('MOODLE_INTERNAL') || die;
 require_once($CFG->libdir . "/externallib.php");
 require_once('lib.php');
 
+/**
+ * Class that defines external API for local_starred_courses.
+ */
 class local_starred_courses_external extends external_api {
 
     /**
@@ -46,6 +49,10 @@ class local_starred_courses_external extends external_api {
 
     /**
      * Star or unstar a course.
+     *
+     * @param int $userid User id to toggle for.
+     * @param int $courseid Course id to toggle for.
+     *
      * @return bool|null Is the course now starred or unstarred? (or null on failure)
      */
     public static function toggle_starred($userid, $courseid) {

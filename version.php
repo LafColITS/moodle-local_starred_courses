@@ -15,6 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Version information for local_starred_courses.
  *
  * @package    local_starred_courses
  * @copyright  2018 onwards Lafayette College ITS
@@ -27,4 +28,4 @@ $plugin->version = 2018101200;
 $plugin->requires = 2018101100;
 $plugin->component = 'local_starred_courses';
 $plugin->maturity = MATURITY_ALPHA;
-$plugin->release = '1.0.0'; // [major].[minor].[patch]-[Moodle Version].[Moodle version specific patch].
+$plugin->release = '1.0.0'; // Pattern: [major].[minor].[patch]-[Moodle Version].[Moodle version specific patch].

@@ -78,7 +78,7 @@ function local_starred_courses_extend_navigation($navigation) {
  * Check that the user preference has been set, and initialize it if not.
  * Otherwise trying to read the preference to check for starred courses
  * throws errors.
- * @param int $userid The id of the user we're intializing for.
+ * @param int $userid The id of the user we're initializing for.
  */
 function initialize_starred_courses_user_preference($userid) {
     if (! get_user_preferences(STARRED_COURSES_USER_PREFERENCE_NAME, false, $userid)) {
