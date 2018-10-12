@@ -18,18 +18,6 @@ module.exports = function (grunt) {
                 tasks: ["amd"]
             }
         },
-        fixindent: {
-            stylesheets: {
-                src: [
-                    'styles.css'
-                ],
-                dest: 'styles.css',
-                options: {
-                    style: 'space',
-                    size: 4
-                }
-            }
-        },
         eslint: {
             amd: {src: "amd/src"}
         },
@@ -44,5 +32,5 @@ module.exports = function (grunt) {
     });
     // The default task (running "grunt" in console).
     grunt.registerTask("default", ["fixindent", "eslint", "uglify"]);
-    grunt.registerTask("dev", ["fixindent", "uglify"]);
+    grunt.registerTask("dev", ["uglify"]);
 };

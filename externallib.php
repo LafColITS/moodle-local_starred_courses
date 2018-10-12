@@ -29,6 +29,9 @@ require_once('lib.php');
 
 /**
  * Class that defines external API for local_starred_courses.
+ *
+ * @copyright  2018 onwards Lafayette College ITS
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_starred_courses_external extends external_api {
 
