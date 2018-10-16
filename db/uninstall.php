@@ -24,9 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-require_once('../lib.php');
+require_once($CFG->dirroot . '/local/starred_courses/lib.php');
 
-$users = $DB->get_records('users');
+$users = $DB->get_records('user');
 
 foreach ($users as $user) {
     unset_user_preference(STARRED_COURSES_USER_PREFERENCE_NAME, $user->id);
