@@ -40,11 +40,19 @@ require_once('lib.php');
 class starred_fcl_filter extends \block_filtered_course_list\filter {
 
     /** @var string The shortname of this filter (e.g. shortname, category) */
-    public static $shortname = 'starred';
+    public static function getshortname() {
+        return 'starred';
+    }
+
     /** @var string The fullname of this filter (e.g. Shortname, Course Category ) */
-    public static $fullname = 'Starred Courses';
+    public static function getfullname() {
+        return 'Starred Courses';
+    }
+
     /** @var string The component of this filter (e.g. block_filtered_course_list) */
-    public static $component = 'local_starred_courses';
+    public static function getcomponent() {
+        'local_starred_courses';
+    }
 
     /**
      * Validate the line
