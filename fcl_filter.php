@@ -17,6 +17,10 @@
 /**
  * This file contains a filter class to be used by block_filtered_course_list to display starred courses.
  *
+ * Filtered Course List:
+ *   Moodle Plugins Repo https://moodle.org/plugins/block_filtered_course_list
+ *   GitHub https://github.com/CLAMP-IT/moodle-blocks_filtered_course_list
+ *
  * @package    local_starred_courses
  * @copyright  2018 Lafayette College
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
