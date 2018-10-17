@@ -51,7 +51,7 @@ class starred_fcl_filter extends \block_filtered_course_list\filter {
 
     /** @var string The component of this filter (e.g. block_filtered_course_list) */
     public static function getcomponent() {
-        'local_starred_courses';
+        return 'local_starred_courses';
     }
 
     /**
