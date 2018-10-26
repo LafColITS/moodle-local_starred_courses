@@ -66,6 +66,15 @@ class starred_fcl_filter extends \block_filtered_course_list\filter {
     }
 
     /**
+     * Retrieve filter version sync number.
+     *
+     * @return string This filter's version sync number.
+     */
+    public static function getversionsyncnum() {
+        return '1.0.0';
+    }
+
+    /**
      * Validate the line
      *
      * @param array $line The array of line elements that has been passed to the constructor
