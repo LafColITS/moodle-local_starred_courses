@@ -33,8 +33,8 @@ require_once('lib.php');
 /**
  * A class to construct rubrics based on starred courses from local_starred_courses
  *
- * @package    block_filtered_course_list
- * @copyright  2018 CLAMP
+ * @package    local_starred_courses
+ * @copyright  2018 Lafayette College
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class starred_fcl_filter extends \block_filtered_course_list\filter {
